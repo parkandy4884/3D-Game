@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcbwrbsjah711"]
+[gd_scene load_steps=14 format=3 uid="uid://bcbwrbsjah711"]
 
 [ext_resource type="Script" path="res://Maze/Maze.gd" id="1"]
 [ext_resource type="Script" path="res://Player/Player.gd" id="2"]
 [ext_resource type="Script" path="res://UI/Menu.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://cadjjtov6exgu" path="res://Assets/shotgun.obj" id="3_nnkch"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ej5nb"]
 
@@ -51,6 +52,7 @@ mesh = SubResource("1")
 
 [node name="Nose" type="MeshInstance3D" parent="Player"]
 transform = Transform3D(1, 0, -4.37114e-08, 4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, 2.08165e-12, 1.3, -0.5)
+visible = false
 mesh = SubResource("PrismMesh_jtolx")
 
 [node name="Body" type="CollisionShape3D" parent="Player"]
@@ -65,8 +67,12 @@ shape = SubResource("4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera" type="Camera3D" parent="Player/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.721867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.338797)
 current = true
+
+[node name="Gun" type="MeshInstance3D" parent="Player/Pivot"]
+transform = Transform3D(-8, 0, -6.99382e-07, 0, 8, 0, 6.99382e-07, 0, -8, 0.4, -0.3, -0.7)
+mesh = ExtResource("3_nnkch")
 
 [node name="Overhead" type="Camera3D" parent="Player"]
 transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 0, 6, 2.08165e-12)
